@@ -24,7 +24,7 @@ ap.add_argument("-v", "--video", type=str, default="",
 	help="path to input video file")
 args = vars(ap.parse_args())
 
-EYE_AR_THRESH = 0.20
+EYE_AR_THRESH = 0.21
 EYE_AR_CONSEC_FRAMES = 4
 
 COUNTER = 0
