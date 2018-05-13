@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import threading
 import time
-from Tkinter import *
+from tkinter import *
 
 alfabeto = [["A", "B", "C", "D", "E", "F", "G"], ["H", "I", "J", "K", "L", "LL", "M"], ["N", u"Ñ", "O", "P", "Q", "R", "S"], ["T", "U", "V", "W", "X", "Y", "Z"]]
 fila_seleccionada = 0
@@ -10,11 +10,16 @@ columna_seleccionada = -1
 repetir_fila = True
 repetir_columna = False
 
+def xrange(x):
+    return range(x)
+
+
+
 def do_slow_stuff():
     global fila_seleccionada, columna_seleccionada
     while(True):
         if(columna_seleccionada == -1):
-            while(repetir_fila):    
+            while(repetir_fila):
                 for z in range(len(selfbutton[fila_seleccionada])):
                     if(not(repetir_fila)):
                         break
@@ -65,9 +70,9 @@ def do_slow_stuff_2():
             texto_actual = ""
         text_input.delete(0, END)
         text_input.insert(0, texto_actual)
-        
+
         selfbutton[fila_seleccionada][columna_seleccionada].config(bg = "#bbb")
-        
+
         fila_seleccionada = 0
         columna_seleccionada = -1
         repetir_columna = False
@@ -98,7 +103,7 @@ grid.grid(sticky=N+S+E+W, column=0, row=7, columnspan=2)
 Grid.rowconfigure(frame, 7, weight=1)
 Grid.columnconfigure(frame, 0, weight=1)
 
-selfbutton = [[0 for x in xrange(7)] for x in xrange(4)] 
+selfbutton = [[0 for x in xrange(7)] for x in xrange(4)]
 selfbutton.append([0,0])
 selfbutton.append([0,0])
 buttonoptions = [[0 for x in xrange(2)] for x in xrange(2)]
